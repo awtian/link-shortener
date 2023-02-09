@@ -4,16 +4,38 @@
     <hr />
     <a class="short-url" :href="shortUrl" target="_blank">{{ shortUrl }}</a>
     <div class="button-container">
-      <button>Copy</button>
+      <button :class="buttonClass" @click="handleCopyUrl">{{ text }}</button>
     </div>
   </div>
 </template>
 
 <script>
 export default {
+  data: () => ({
+    text: "Copy",
+    buttonClass: "button-idle",
+  }),
   props: {
     longUrl: { type: String, required: true },
     shortUrl: { type: String, required: true },
+  },
+  methods: {
+    async handleCopyUrl() {
+      await this.copyURL();
+      this.text = "Copied to clipboard!";
+      this.buttonClass = "button-clicked";
+      setTimeout(() => {
+        this.text = "Copy";
+        this.buttonClass = "button-idle";
+      }, 500);
+    },
+    async copyURL() {
+      try {
+        await navigator.clipboard.writeText(this.shortUrl);
+      } catch ($e) {
+        alert("Something went wrong with our copying module");
+      }
+    },
   },
 };
 </script>
@@ -60,7 +82,14 @@ export default {
   font-family: "Poppins";
   border-radius: 5px;
   color: white;
-  background-color: var(--color-primary-cyan);
   font-weight: 700;
+}
+
+.button-idle {
+  background-color: var(--color-primary-cyan);
+}
+
+.button-clicked {
+  background-color: var(--color-primary-dark-violet);
 }
 </style>
