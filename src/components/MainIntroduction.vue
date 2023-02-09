@@ -25,6 +25,7 @@
   text-align: center;
   /* padding: 10px; */
   font-weight: 500;
+  margin-bottom: 110px;
 }
 
 .container h1 {

@@ -26,7 +26,7 @@ export default {
   position: relative;
   background-color: white;
   text-align: center;
-  margin: 0px 30px;
+  margin: 0px 15px;
   margin-top: 0px;
   border-radius: 10px;
   margin-bottom: 80px;

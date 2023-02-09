@@ -87,7 +87,7 @@ export default {
 <style scoped>
 .container {
   background-color: var(--color-bg-gray);
-  padding-bottom: 30px;
+  padding-bottom: 70px;
   /* opacity: 0.5; */
 }
 .shorten-card {

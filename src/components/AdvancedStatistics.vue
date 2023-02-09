@@ -46,7 +46,7 @@ export default {
 <style scoped>
 .container {
   background-color: var(--color-bg-gray);
-  padding-bottom: 30px;
+  padding-bottom: 10px;
   text-align: center;
   /* opacity: 0.5; */
 }
