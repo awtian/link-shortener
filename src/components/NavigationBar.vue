@@ -125,7 +125,7 @@ export default {
   .container {
     width: 100%;
     display: flex;
-    padding: 50px;
+    padding: 50px 100px;
     align-items: center;
   }
 
@@ -169,6 +169,10 @@ export default {
     /* width: 50%; */
     border-radius: 2rem;
     /* margin-bottom: 30px; */
+  }
+
+  .right-nav button:hover {
+    opacity: 0.8;
   }
 }
 </style>
