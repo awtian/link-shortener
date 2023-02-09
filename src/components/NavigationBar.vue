@@ -37,6 +37,7 @@ export default {
 <style scoped>
 .container {
   margin-top: 25px;
+  padding: 10px;
   display: flex;
   justify-content: space-between;
 }

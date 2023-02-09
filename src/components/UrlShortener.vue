@@ -1,10 +1,11 @@
 <template>
   <div>
-    <h1>URL Shortener</h1>
-    <form @submit.prevent="handleUrlSubmit">
-      <input type="text" v-model="url" />
-      <button>Shorten it!</button>
-    </form>
+    <div class="shorten-card">
+      <form @submit.prevent="handleUrlSubmit">
+        <input type="text" v-model="url" placeholder="Shorten a link here..." />
+        <button>Shorten it!</button>
+      </form>
+    </div>
     <ul>
       <li v-for="(short, long) in history" :key="short">
         {{ short + " : " + long }}
@@ -54,4 +55,31 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.shorten-card {
+  background-image: url("@/assets/images/bg-shorten-mobile.svg");
+  background-repeat: no-repeat;
+  background-size: 70% 80%;
+  background-position: top right;
+  background-color: var(--color-primary-dark-violet);
+  margin: 10px;
+  padding: 20px;
+  border-radius: 10px;
+}
+.shorten-card input,
+.shorten-card button {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px;
+  border-width: 0;
+  margin: 5px 0px;
+  font-family: "Poppins";
+  border-radius: 5px;
+}
+
+.shorten-card button {
+  color: white;
+  background-color: var(--color-primary-cyan);
+  font-weight: 700;
+}
+</style>

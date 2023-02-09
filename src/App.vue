@@ -1,9 +1,10 @@
 <script>
-import NavigationBar from "./components/NavigationBar.vue";
-import UrlShortener from "./components/UrlShortener.vue";
+import NavigationBar from "@/components/NavigationBar.vue";
+import UrlShortener from "@/components/UrlShortener.vue";
+import MainIntroduction from "@/components/MainIntroduction.vue";
 
 export default {
-  components: { UrlShortener, NavigationBar },
+  components: { UrlShortener, NavigationBar, MainIntroduction },
 };
 </script>
 
@@ -14,6 +15,7 @@ export default {
     </header>
 
     <main>
+      <MainIntroduction />
       <UrlShortener />
     </main>
 

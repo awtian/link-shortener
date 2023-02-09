@@ -63,6 +63,9 @@
   font-weight: normal;
 } */
 
+body {
+  margin: 0;
+}
 /* body {
   min-height: 100vh;
   color: var(--color-text);
