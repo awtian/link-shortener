@@ -1,6 +1,6 @@
 <template>
   <div class="url-card">
-    <p>{{ longUrl }}</p>
+    <p>{{ conciseLongUrl }}</p>
     <hr />
     <a class="short-url" :href="shortUrl" target="_blank">{{ shortUrl }}</a>
     <div class="button-container">
@@ -19,10 +19,19 @@ export default {
     longUrl: { type: String, required: true },
     shortUrl: { type: String, required: true },
   },
+  computed: {
+    conciseLongUrl() {
+      if (this.longUrl.length > 30) {
+        return this.longUrl.slice(0, 25) + "...";
+      } else {
+        return this.longUrl;
+      }
+    },
+  },
   methods: {
     async handleCopyUrl() {
       await this.copyURL();
-      this.text = "Copied to clipboard!";
+      this.text = "Copied!";
       this.buttonClass = "button-clicked";
       setTimeout(() => {
         this.text = "Copy";

@@ -57,7 +57,7 @@ export default {
 }
 
 .subtitle {
-  font-size: 14px;
+  font-size: 16px;
   color: var(--color-neutral-gray);
   margin: 0px 20px;
   margin-bottom: 100px;
