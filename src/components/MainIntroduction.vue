@@ -27,9 +27,14 @@
   font-weight: 500;
 }
 
+.container h1 {
+  margin: 0;
+}
 .container p {
   color: var(--color-neutral-gray);
-  padding: 0 20px;
+  padding: 0 10px;
+  font-size: 16px;
+  margin-top: 8px;
 }
 
 .container button {
