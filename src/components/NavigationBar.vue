@@ -9,12 +9,14 @@
   </div>
   <transition name="fade">
     <div v-if="showMobileMenu" class="mobile-menu">
-      <p><a>Features</a></p>
-      <p><a>Pricing</a></p>
-      <p><a>Resources</a></p>
-      <hr />
-      <p><a>Login</a></p>
-      <button>Sign Up</button>
+      <div>
+        <p><a>Features</a></p>
+        <p><a>Pricing</a></p>
+        <p><a>Resources</a></p>
+        <hr />
+        <p><a>Login</a></p>
+        <button>Sign Up</button>
+      </div>
     </div>
   </transition>
 </template>
@@ -48,12 +50,36 @@ export default {
   left: 50%;
   transform: translateX(-50%);
   width: 83vw;
-  background-color: hsl(257, 27%, 26%);
+  background-color: var(--color-primary-dark-violet);
   color: white;
-  padding: 20px 15px;
+  padding: 10px 20px;
   border-radius: 10px;
   text-align: center;
-  /* border: 3px solid #73ad21; */
+}
+
+.mobile-menu div {
+  padding: 0 10px;
+}
+
+.mobile-menu p {
+  font-weight: 700;
+  padding: 10px;
+}
+.mobile-menu hr {
+  color: var(--color-neutral-gray);
+  opacity: 0.1;
+}
+
+.mobile-menu button {
+  border: 0;
+  font-weight: 700;
+  font-size: 18px;
+  background-color: var(--color-primary-cyan);
+  color: white;
+  padding: 15px;
+  width: 100%;
+  border-radius: 2rem;
+  margin-bottom: 30px;
 }
 
 .fade-enter-active,
