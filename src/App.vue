@@ -1,31 +1,19 @@
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
-import TheWelcome from "./components/TheWelcome.vue";
+import NavigationBar from "./components/NavigationBar.vue";
 import UrlShortener from "./components/UrlShortener.vue";
 
 export default {
-  components: { UrlShortener, TheWelcome, HelloWorld },
+  components: { UrlShortener, NavigationBar },
 };
 </script>
 
 <template>
   <div>
     <header>
-      <!-- <img
-        alt="Vue logo"
-        class="logo"
-        src="./assets/logo.svg"
-        width="125"
-        height="125"
-      />
-
-      <div class="wrapper">
-        <HelloWorld msg="You did it!" />
-      </div> -->
+      <NavigationBar />
     </header>
 
     <main>
-      <!-- <TheWelcome /> -->
       <UrlShortener />
     </main>
 
