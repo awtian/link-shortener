@@ -2,9 +2,19 @@
 import NavigationBar from "@/components/NavigationBar.vue";
 import UrlShortener from "@/components/UrlShortener.vue";
 import MainIntroduction from "@/components/MainIntroduction.vue";
+import AdvancedStatistics from "@/components/AdvancedStatistics.vue";
+import BoostLink from "@/components/BoostLink.vue";
+import FooterLinks from "./components/FooterLinks.vue";
 
 export default {
-  components: { UrlShortener, NavigationBar, MainIntroduction },
+  components: {
+    UrlShortener,
+    NavigationBar,
+    MainIntroduction,
+    AdvancedStatistics,
+    BoostLink,
+    FooterLinks,
+  },
 };
 </script>
 
@@ -17,9 +27,13 @@ export default {
     <main>
       <MainIntroduction />
       <UrlShortener />
+      <AdvancedStatistics />
     </main>
 
-    <footer>Hi footer</footer>
+    <footer>
+      <BoostLink />
+      <FooterLinks />
+    </footer>
   </div>
 </template>
 
