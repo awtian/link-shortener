@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="shorten-card">
-      <form @submit.prevent="handleUrlSubmit">
+      <form class="form" @submit.prevent="handleUrlSubmit">
         <input
           type="text"
           v-model="url"
@@ -9,9 +9,14 @@
           placeholder="Shorten a link here..."
           @focus="isDirty = true"
         />
-        <span v-if="emptyUrl" class="error-message">Please add a link</span>
+        <span v-if="emptyUrl" class="error-message-mobile"
+          >Please add a link</span
+        >
         <button>Shorten it!</button>
       </form>
+      <span v-if="emptyUrl" class="error-message-desktop"
+        >Please add a link</span
+      >
     </div>
     <div class="url-card-container">
       <UrlCard
@@ -85,39 +90,6 @@ export default {
 </script>
 
 <style scoped>
-.container {
-  background-color: var(--color-bg-gray);
-  padding-bottom: 70px;
-  /* opacity: 0.5; */
-}
-.shorten-card {
-  background-image: url("@/assets/images/bg-shorten-mobile.svg");
-  background-repeat: no-repeat;
-  background-size: 70% 80%;
-  background-position: top right;
-  background-color: var(--color-primary-dark-violet);
-  margin: 10px;
-  margin-top: 75px;
-  padding: 20px;
-  position: relative;
-  top: -70px;
-  border-radius: 10px;
-}
-
-.url-card-container {
-  margin-top: -50px;
-  /* margin-bottom: 100px; */
-}
-
-.error-message {
-  color: var(--color-secondary-red);
-  font-size: 12px;
-  font-style: italic;
-  font-weight: 500;
-  margin: 0;
-  margin-top: -5px;
-}
-
 .input-error {
   outline: 2px solid var(--color-secondary-red);
 }
@@ -126,15 +98,50 @@ export default {
   color: var(--color-secondary-red);
   opacity: 0.5;
 }
-.shorten-card input,
-.shorten-card button {
-  box-sizing: border-box;
-  width: 100%;
-  padding: 10px;
-  border-width: 0;
-  margin: 5px 0px;
-  font-family: "Poppins";
-  border-radius: 5px;
+@media screen and (max-width: 425px) {
+  .container {
+    background-color: var(--color-bg-gray);
+    padding-bottom: 70px;
+    /* opacity: 0.5; */
+  }
+  .shorten-card {
+    background-image: url("@/assets/images/bg-shorten-mobile.svg");
+    background-repeat: no-repeat;
+    background-size: 70% 80%;
+    background-position: top right;
+    background-color: var(--color-primary-dark-violet);
+    margin: 10px;
+    margin-top: 75px;
+    padding: 20px;
+    position: relative;
+    top: -70px;
+    border-radius: 10px;
+  }
+
+  .url-card-container {
+    margin-top: -50px;
+    /* margin-bottom: 100px; */
+  }
+
+  .error-message-mobile {
+    color: var(--color-secondary-red);
+    font-size: 12px;
+    font-style: italic;
+    font-weight: 500;
+    margin: 0;
+    margin-top: -5px;
+  }
+
+  .shorten-card input,
+  .shorten-card button {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px;
+    border-width: 0;
+    margin: 5px 0px;
+    font-family: "Poppins";
+    border-radius: 5px;
+  }
 }
 
 .shorten-card input {
@@ -146,5 +153,71 @@ export default {
   background-color: var(--color-primary-cyan);
   font-weight: 700;
   margin-top: 10px;
+}
+
+@media screen and (min-width: 426px) {
+  .container {
+    padding: 0px 100px;
+    background-color: var(--color-bg-gray);
+    padding-bottom: 70px;
+  }
+  .shorten-card {
+    height: 80px;
+    background-image: url("@/assets/images/bg-shorten-desktop.svg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: top right;
+    background-color: var(--color-primary-dark-violet);
+    padding: 50px;
+    margin-top: 100px;
+    position: relative;
+    top: -70px;
+    border-radius: 10px;
+  }
+
+  .shorten-card input {
+    width: 70%;
+    padding: 10px;
+    border-radius: 10px;
+    /* margin-top: 5px; */
+    font-size: 20px;
+    height: 40px;
+    border-width: 0;
+  }
+  .shorten-card button {
+    height: 60px;
+    width: 20%;
+    border: none;
+    padding: 16px 15px;
+    border-width: 0;
+    border-radius: 10px;
+    margin: 0;
+    margin-left: 1rem;
+    /* margin-top: 5px; */
+    cursor: pointer;
+  }
+
+  .shorten-card button:hover {
+    opacity: 0.8;
+  }
+  .form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .error-message-mobile {
+    display: none;
+  }
+
+  .error-message-desktop {
+    color: var(--color-secondary-red);
+    font-size: 12px;
+    font-style: italic;
+    font-weight: 500;
+    margin: 0;
+    padding-left: 40px;
+    margin-top: -5px;
+  }
 }
 </style>
