@@ -22,10 +22,35 @@
         <a href="#"><p class="submenu-item">Contact</p></a>
       </div>
       <div class="submenu-container">
-        <a href="#"
-          ><img class="icon" src="@/assets/images/icon-facebook.svg"
-        /></a>
-        <a href="#"
+        <a href="#">
+          <font-awesome-icon
+            icon="fa-brands fa-facebook-square"
+            class="icon"
+            size="lg"
+          />
+        </a>
+        <a href="#">
+          <font-awesome-icon
+            icon="fa-brands fa-twitter"
+            class="icon"
+            size="lg"
+          />
+        </a>
+        <a href="#">
+          <font-awesome-icon
+            icon="fa-brands fa-pinterest"
+            class="icon"
+            size="lg"
+          />
+        </a>
+        <a href="#">
+          <font-awesome-icon
+            icon="fa-brands fa-instagram"
+            class="icon"
+            size="lg"
+          />
+        </a>
+        <!-- <a href="#"
           ><img class="icon" src="@/assets/images/icon-twitter.svg"
         /></a>
         <a href="#"
@@ -33,7 +58,7 @@
         /></a>
         <a href="#"
           ><img class="icon" src="@/assets/images/icon-instagram.svg"
-        /></a>
+        /></a> -->
       </div>
     </div>
   </div>
@@ -69,11 +94,13 @@
   margin: 5px 0px;
 }
 
-.submenu-item:hover {
+.submenu-item:hover,
+.icon:hover {
   color: var(--color-primary-cyan);
 }
 
 .icon {
+  color: white;
   margin: 15px;
 }
 
@@ -83,6 +110,8 @@
     align-items: flex-start;
     justify-content: space-around;
     padding: 50px;
+    padding-top: 100px;
+    padding-bottom: 100px;
   }
 
   .logo {

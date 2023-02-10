@@ -131,6 +131,9 @@ export default {
     margin: 0;
     margin-top: -5px;
   }
+  .error-message-desktop {
+    display: none;
+  }
 
   .shorten-card input,
   .shorten-card button {
