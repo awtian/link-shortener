@@ -71,6 +71,10 @@ export default {
   background-color: var(--color-primary-cyan);
 }
 
+button.button-idle:hover {
+  background-color: var(--color-primary-cyan-hover);
+}
+
 .button-clicked {
   background-color: var(--color-primary-dark-violet);
 }

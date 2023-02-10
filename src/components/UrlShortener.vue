@@ -185,6 +185,7 @@ export default {
     border-width: 0;
   }
   .shorten-card button {
+    font-size: 20px;
     height: 60px;
     width: 20%;
     border: none;
@@ -198,7 +199,7 @@ export default {
   }
 
   .shorten-card button:hover {
-    opacity: 0.8;
+    background-color: var(--color-primary-cyan-hover);
   }
   .form {
     display: flex;
@@ -216,7 +217,7 @@ export default {
     font-style: italic;
     font-weight: 500;
     margin: 0;
-    padding-left: 40px;
+    margin-left: 50px;
     margin-top: -5px;
   }
 }
